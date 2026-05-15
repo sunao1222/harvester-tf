@@ -2,13 +2,10 @@ resource "harvester_storageclass" "vmstate-persistence" {
   allow_volume_expansion = true
   description            = null
   is_default             = false
-  labels = {
-    "app.kubernetes.io/managed-by" = "Helm"
-    "objectset.rio.cattle.io/hash" = "e852fa897f5eae59a44b4bfe186aad80b10b94b3"
-  }
   name = "vmstate-persistence"
   parameters = {
-    numberOfReplicas    = "3"
+    migratable = "true"
+    numberOfReplicas    = "2"
     staleReplicaTimeout = "30"
   }
   reclaim_policy      = "Delete"

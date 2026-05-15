@@ -8,6 +8,6 @@ terraform {
 }
 
 provider "harvester" {
-  kubeconfig = "./local.yaml"
+  kubeconfig = "../local.yaml"
   kubecontext = "local"
 }
